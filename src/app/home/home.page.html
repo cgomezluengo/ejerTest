@@ -1,14 +1,31 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Ionic Blank
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+    <ion-button *ngIf='showAnterior' (click)="mostrarSiguientes()">
+        <ion-icon slot="left" name="arrow-dropleft"></ion-icon>
+        Anterior
+    </ion-button>
+    <ion-button (click)="mostrarSiguientes()">
+        <ion-icon name="arrow-dropright"></ion-icon>
+        Siguiente
+    </ion-button>
+    <ion-card *ngFor='let unit of visibleUnit'>
+        <ion-card-content>
+            <p>{{unit.id}}</p>
+            <p>{{unit.secuencial}}</p>
+            <p>{{unit.denominacion}}</p>
+            <p>{{unit.codigoafip}}</p>
+            <p>{{unit.coordenates}}</p>
+            <p>{{unit.createdAt}}</p>
+            <p>{{unit.updatedAt}}</p>
+            <p>{{unit.provinciumId}}</p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>
