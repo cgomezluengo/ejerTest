@@ -1,0 +1,7 @@
+{
+  "name": "ejerTest",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
